@@ -84,7 +84,7 @@ R script to load the genotypic and phenotypic dataset provided in the EnBayes.RD
           [32] y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
           [33] x <- genotypic_datasets$maize #genotypic dataset of maize
   
-- After running the Pheno_Geno_Data.R script, execute the Bayes.R script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against nexp, the default value is 5.
+- After running the Pheno_Geno_Data.R script, execute the Bayes.R script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against _nexp_, the default value is 5.
 
       [6] nexp <- 5 #number of times the number of experiments need to be repeated
 
