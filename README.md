@@ -12,15 +12,15 @@ All four objective functions are subject to the constraint that the sum of all w
 R 4.0.2 version (The program runs only in the R version 4.0.2, no older or latest version will work)
 
 ## R packages
-    hibayes 1.0.0 (install only version 1.0.0, no older or latest version will work)
-       - Link to download hibayes 1.0.0 -> https://cran.r-project.org/src/contrib/Archive/hibayes/hibayes_1.0.0.tar.gz
-       - After downloading hibayes_1.0.0.tar.gz file, run following command in the R interface to install hibayes 1.0.0
+hibayes 1.0.0 (install only version 1.0.0, no older or latest version will work)
+- Link to download hibayes 1.0.0 -> https://cran.r-project.org/src/contrib/Archive/hibayes/hibayes_1.0.0.tar.gz
+- After downloading hibayes_1.0.0.tar.gz file, run following command in the R interface to install hibayes 1.0.0
+
+      > install.packages("hibayes_1.0.0.tar.gz")
              
-           > install.packages("hibayes_1.0.0.tar.gz")
-             
-       - To check if the hibayes package has been downloaded successfully run following command in the R interface
-        
-           > library(hibayes)
+- To check if the hibayes package has been downloaded successfully run following command in the R interface
+
+      > library(hibayes)
     
 ## Models
     viz.
@@ -72,32 +72,32 @@ R script to load the genotypic and phenotypic dataset provided in the EnBayes.RD
     - y (phenotypic file) represents the numeric vector of trait values for n lines/individuals
     - x (genotypic file) represents the data frame of n rows and m columns, where n is the number of lines/individuals and m is the number of markers.
 
-| |Genotypic Dataset|Phenotypic Dataset|
-|---|---|---|
-|1|maize|M_SS, M_WW|
-|2|rice|RY11, RY12|
-|3|groundnut|GY1, GY2, GY3, GY4|
-|4|wheat_yield|WY1, WY2, WY3, WY4|
-|4|wheat_nutrient|BHU_Zn, BHU_Fe, IIWBR_Zn, IIWBR_Fe, PAU_Zn, PAU_Fe|
+      | |Genotypic Dataset|Phenotypic Dataset|
+      |---|---|---|
+      |1|maize|M_SS, M_WW|
+      |2|rice|RY11, RY12|
+      |3|groundnut|GY1, GY2, GY3, GY4|
+      |4|wheat_yield|WY1, WY2, WY3, WY4|
+      |4|wheat_nutrient|BHU_Zn, BHU_Fe, IIWBR_Zn, IIWBR_Fe, PAU_Zn, PAU_Fe|
 
-    [6] load ("EnBayes.RData")
-    [32] y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
-    [33] x <- genotypic_datasets$maize #genotypic dataset of maize
+          [6] load ("EnBayes.RData")
+          [32] y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
+          [33] x <- genotypic_datasets$maize #genotypic dataset of maize
   
 - After running the Pheno_Geno_Data.R script, execute the Bayes.R script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against nexp, the default value is 5.
 
-    [6] nexp <- 5 #number of times the number of experiments need to be repeated
+      [6] nexp <- 5 #number of times the number of experiments need to be repeated
 
-- The Bayes.R script will generate an output file which will be used in the R script for genetic algorithms i.e EnBayes_f1.R EnBayes_f2.R EnBayes_f3.R EnBayes_f4.R.
+- The Bayes.R script will generate an output file which will be used in the R script for genetic algorithms i.e EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R and EnBayes_f4.R.
 - Now execute EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R and EnBayes_f4.R from the same R interface.
    
 NOTE: All R codes should be executed within the same R interface to avoid potential errors. Alternatively, if users prefer to run the scripts via the command line (cmd), they can combine all R files in a format—Pheno_Geno_Data.R → Bayes.R → EnBayes_f1.R → EnBayes_f2.R → EnBayes_f3.R → EnBayes_f4.R into a single script and execute it using a single command in the cmd.
 
-        path/to/R-4.0.2/Rscript <script.R>
+    path/to/R-4.0.2/Rscript <script.R>
         
-      Example 
+Example 
       
-        C:/PROGRA~1/R/R-4.0.2/bin/Rscript combined_code.R
+    C:/PROGRA~1/R/R-4.0.2/bin/Rscript combined_code.R
 
 # Output description
 Once the script is executed, an individual table will be generated for each of the four objective functions i.e f1(w), f2(w), f3(w) and f4(w) as shown below. Each table’s first column lists the eight Bayesian models, with the ensemble model in the last row. The second column displays the PCC values along with their standard errors, while the third column presents the MSE values and their respective standard errors.
