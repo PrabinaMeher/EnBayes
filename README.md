@@ -83,13 +83,13 @@ R script to load the genotypic and phenotypic dataset provided in the EnBayes.RD
       |4|wheat_yield|WY1, WY2, WY3, WY4|
       |4|wheat_nutrient|BHU_Zn, BHU_Fe, IIWBR_Zn, IIWBR_Fe, PAU_Zn, PAU_Fe|
 
-          [6] load ("EnBayes.RData")
-          [32] y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
-          [33] x <- genotypic_datasets$maize #genotypic dataset of maize
+          [6] > load ("EnBayes.RData")
+          [32] > y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
+          [33] > x <- genotypic_datasets$maize #genotypic dataset of maize
   
 - After running the _**Pheno_Geno_Data.R**_ script, execute the _**Bayes.R**_ script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against _nexp_, the default value is 5.
 
-      [6] nexp <- 5 #number of times the number of experiments need to be repeated
+      [6] > nexp <- 5 #number of times the number of experiments need to be repeated
 
 - The _**Bayes.R**_ script will generate an output file which will be used in the R script for genetic algorithms i.e _**EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R**_ and _**EnBayes_f4.R**_.
 - Now execute _**EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R**_ and _**EnBayes_f4.R**_ from the same R interface.
