@@ -67,7 +67,10 @@ R script to load the genotypic and phenotypic dataset provided in the EnBayes.RD
 # Usage 
 - Create a working directory.
 - Place all the downloaded files in the working directory.
-- First, execute the Pheno_Geno_Data.R script from the R interface to load the dataset provided in EnBayes.RData. We have provided a total of 5 genotypic datasets and there corresponding 18 phenotypic traits. User can choose any dataset by using the symbols listed in the table below. Alternatively, user can provide their own phenotypic and genotypic files—just ensure that all missing values are imputed. Place the phenotypic file against y and genotypic file against x in the Pheno_Geno_Data.R file.
+- Now set working directory by executing following command on the R interface.
+
+      > setwd("path/to/your/working/directory")
+- First, execute the _**Pheno_Geno_Data.R**_ script from the R interface to load the dataset provided in _**EnBayes.RData**_. We have provided a total of 5 genotypic datasets and there corresponding 18 phenotypic traits. User can choose any dataset by using the symbols listed in the table below. Alternatively, user can provide their own phenotypic and genotypic files—just ensure that all missing values are imputed. Place the phenotypic file against y and genotypic file against x in the _**Pheno_Geno_Data.R**_ file.
 
     - y (phenotypic file) represents the numeric vector of trait values for n lines/individuals
     - x (genotypic file) represents the data frame of n rows and m columns, where n is the number of lines/individuals and m is the number of markers.
@@ -84,14 +87,14 @@ R script to load the genotypic and phenotypic dataset provided in the EnBayes.RD
           [32] y <- phenotypic_datasets$M_SS[,1] #phenotypic dataset M_SS 
           [33] x <- genotypic_datasets$maize #genotypic dataset of maize
   
-- After running the Pheno_Geno_Data.R script, execute the Bayes.R script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against _nexp_, the default value is 5.
+- After running the _**Pheno_Geno_Data.R**_ script, execute the _**Bayes.R**_ script to run the eight Bayesian models from the same R interface. The user can modify how many times the experiments are repeated by replacing the value against _nexp_, the default value is 5.
 
       [6] nexp <- 5 #number of times the number of experiments need to be repeated
 
-- The Bayes.R script will generate an output file which will be used in the R script for genetic algorithms i.e EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R and EnBayes_f4.R.
-- Now execute EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R and EnBayes_f4.R from the same R interface.
+- The _**Bayes.R**_ script will generate an output file which will be used in the R script for genetic algorithms i.e _**EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R**_ and _**EnBayes_f4.R**_.
+- Now execute _**EnBayes_f1.R, EnBayes_f2.R, EnBayes_f3.R**_ and _**EnBayes_f4.R**_ from the same R interface.
    
-NOTE: All R codes should be executed within the same R interface to avoid potential errors. Alternatively, if users prefer to run the scripts via the command line (cmd), they can combine all R files in a format—Pheno_Geno_Data.R → Bayes.R → EnBayes_f1.R → EnBayes_f2.R → EnBayes_f3.R → EnBayes_f4.R into a single script and execute it using a single command in the cmd.
+**NOTE:** All R codes should be executed within the same R interface to avoid potential errors. Alternatively, if users prefer to run the scripts via the command line (cmd), they can combine all R files in a format—Pheno_Geno_Data.R → Bayes.R → EnBayes_f1.R → EnBayes_f2.R → EnBayes_f3.R → EnBayes_f4.R into a single script and execute it using a single command in the cmd.
 
     path/to/R-4.0.2/Rscript <script.R>
         
@@ -100,7 +103,7 @@ Example
     C:/PROGRA~1/R/R-4.0.2/bin/Rscript combined_code.R
 
 # Output description
-Once the script is executed, an individual table will be generated for each of the four objective functions i.e f1(w), f2(w), f3(w) and f4(w) as shown below. Each table’s first column lists the eight Bayesian models, with the ensemble model in the last row. The second column displays the PCC values along with their standard errors, while the third column presents the MSE values and their respective standard errors.
+Once the script is executed, an individual table will be generated for each of the four objective functions i.e f1(w), f2(w), f3(w) and f4(w) as shown below. Each table’s first column lists the eight Bayesian models and ensemble model in the last row. The second column displays the PCC values along with their standard errors, while the third column presents the MSE values and their respective standard errors.
 
 |Model|PCC|MSE|
 |---|---|---| 
