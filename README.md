@@ -103,7 +103,7 @@ Example
     C:/PROGRA~1/R/R-4.0.2/bin/Rscript combined_code.R
 
 # Output description
-Once the script is executed, an individual output file will be generated for each of the four objective functions i.e _**GP_Accuracy_f1(w).txt, GP_Accuracy_f2(w).txt, GP_Accuracy_f3(w).txt**_ and _**GP_Accuracy_f4(w).txt**_ for f1(w), f2(w), f3(w), f4(w) respectively as shown below. Each file’s first column lists the eight Bayesian models and ensemble model in the last row. The second column displays the PCC values along with their standard errors, while the third column presents the MSE values and their respective standard errors.
+Once the script is executed, an individual output file will be generated for each of the four objective functions i.e _**GP_Accuracy_f1(w).txt, GP_Accuracy_f2(w).txt, GP_Accuracy_f3(w).txt**_ and _**GP_Accuracy_f4(w).txt**_ for f1(w), f2(w), f3(w), f4(w) respectively. Each file’s first column lists the eight Bayesian models and an ensemble model in the last row  as shown below. The second column displays the PCC values along with their standard errors, while the third column presents the MSE values and their respective standard errors.
 
 |Model|PCC|MSE|
 |---|---|---| 
